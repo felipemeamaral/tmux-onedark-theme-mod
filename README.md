@@ -88,14 +88,14 @@ Reload TMUX environment (type this in terminal)
 ```
 $ tmux source-file ~/.tmux.conf
 ```
-
+## Additional steps  
 ### ZSH Shell
-To setup the terminal just like mine, you have to install ZSH using your package manager.
-macOS  
+To setup the terminal just like mine, you have to install ZSH using your package manager.  
+**macOS**  
 ```
 brew install zsh
 ```
-And set it as your default terminal with the command:
+And set it as your default terminal with these two commands:
 ```
 chsh -s $(which zsh)
 sudo chsh -s $(which zsh)
