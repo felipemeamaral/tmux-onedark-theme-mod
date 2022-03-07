@@ -9,7 +9,7 @@ Furthermore, with `tmuxline.vim`, you can't control the widgets on right status 
 
 A picture of my terminal with *@onedark_widgets* set to "*#{package_updates} #{free_mem}*".  
 These widgets are available in [tmux-status-variables](https://github.com/odedlaz/tmux-status-variables).
-![tmux-onedark-theme Preview](https://raw.githubusercontent.com/felipemeamaral/tmux-onedark-theme-mod/master/preview-terminal.png)
+![tmux-onedark-theme Preview](https://github.com/felipemeamaral/tmux-onedark-theme-mod/raw/main/preview-terminal.png)
 
 ### Set Options
 
