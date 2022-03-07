@@ -105,6 +105,28 @@ sudo chsh -s $(which zsh)
 It is required to install powerlevel10k as well if you want the same theme on your terminal.
 Follow [these instructions](https://github.com/romkatv/powerlevel10k) to install it on your system.
 
+### Autostart
+To autostart tmux on every new terminal, just add this command as your runing command:  
+```
+tmux new -As 0
+```
+
+### Visual Studio Code
+To integrate the theme into Visual Studio Code install One Dark Pro theme from [here](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme).
+And set it as your terminal adding these lines to your `settings.json` file:  
+```json
+"terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "zsh",
+      "args": [
+        "-i",
+        "-c",
+        "tmux new -As 0"
+      ]
+    },
+  },
+```
+
 
 ## Issues
 
