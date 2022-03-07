@@ -126,7 +126,64 @@ And set it as your terminal adding these lines to your `settings.json` file:
     },
   },
 ```
+And set it as your terminal adding these lines to your `settings.json` file:  
 
+### tmux.conf example file
+```
+#List of plugins
+set -g @plugin "tmux-plugins/tpm"
+set -g @plugin "tmux-plugins/tmux-sensible"
+set -g @plugin "felipemeamaral/tmux-onedark-theme-mod"
+set -g @plugin "tmux-plugins/tmux-resurrect"
+set -g @plugin "tmux-plugins/tmux-continuum"
+
+set -g default-terminal "screen-256color"
+
+# Enable tmux continuum
+set -g @continuum-restore "on"
+
+# Scroll History
+set -g history-limit 10000
+
+# Set ability to capture on start and restore on exit window data when running an application
+setw -g alternate-screen on
+
+# Lower escape timing from 500ms to 50ms for quicker response to scroll-buffer access.
+set -s escape-time 50
+
+setw -q -g utf8 on
+unbind C-b
+set -g prefix C-a
+set -g base-index 1
+set -g pane-base-index 1
+set-option -g history-limit 10000
+bind -n S-Right next-window
+bind -n S-Left previous-window
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+bind r source-file ~/.tmux.conf \; display "~/.tmux.conf sourced"
+bind C-f command-prompt -p find-session "switch-client -t %%"
+setw -g monitor-activity on
+set -g visual-activity on
+bind | split-window -h
+bind _ split-window -v
+setw -g automatic-rename on   # rename window to reflect current program
+set -g renumber-windows on    # renumber windows when a window is closed
+set -g status-interval 10     # redraw status line every 10 seconds
+
+new -As 0
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run "~/.tmux/plugins/tpm/tpm"
+```
+With these you can navigate through windows using `Alt + Arrow` keys.  
+Navigate between tabs using Shift + `Left/Right` arrow keys.  
+Split horizontally/vertically using `Ctrl + A, |` or `Ctrl + A _`.  
+Resize windows using `Ctrl + A, Alt + Arrow` keys.  
+Reload tmux config file using `Ctrl + A, R`.  
+Install new packages after modifying `.tmux.conf` file using `Ctrl + A, I`.  
 
 ## Issues
 
